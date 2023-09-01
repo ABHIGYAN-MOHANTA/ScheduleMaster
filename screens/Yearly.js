@@ -82,18 +82,20 @@ const Yearly = () => {
           value={eventTitle}
           onChangeText={setEventTitle}
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Start Time (e.g., 4:00 AM)"
-          value={startTime}
-          onChangeText={setStartTime}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="End Time (e.g., 5:30 AM)"
-          value={endTime}
-          onChangeText={setEndTime}
-        />
+        <View style={styles.innerInputContainer}>
+          <TextInput
+            style={styles.inputTwo}
+            placeholder="Start Time"
+            value={startTime}
+            onChangeText={setStartTime}
+          />
+          <TextInput
+            style={styles.inputTwo}
+            placeholder="End Time"
+            value={endTime}
+            onChangeText={setEndTime}
+          />
+        </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.addButton} onPress={handleAddEvent}>
             <Text style={styles.addButtonText}>Add Event</Text>
@@ -196,7 +198,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 20,
+    paddingHorizontal: 22,
+  },
+  innerInputContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  inputTwo: {
+    width: "49%",
+    padding: 12,
+    marginBottom: 10,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 8,
+    color: "#333",
   },
 });
 
